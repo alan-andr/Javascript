@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Laboratório de Tratamento de Dados - JS</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #f8f8f8;
+      max-width: 700px;
+      margin: 40px auto;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px #ccc;
+    }
+    h2 {
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 5px;
+    }
+    .card {
+      background: white;
+      padding: 15px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+    }
+    input {
+      padding: 5px;
+      width: 100%;
+      font-size: 1em;
+      margin-bottom: 10px;
+    }
+    button {
+      padding: 8px 12px;
+      font-size: 0.9em;
+      margin: 4px 4px 4px 0;
+      cursor: pointer;
+    }
+    .output {
+      background: #eee;
+      padding: 10px;
+      margin-top: 10px;
+      border-radius: 6px;
+      font-family: monospace;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🔬 Laboratório JS – Tratamento de Dados</h1>
+
+  <!-- STRING -->
+  <div class="card">
+    <h2>1. Strings</h2>
+    <input type="text" id="strInput" placeholder="Digite uma string..." />
+    <button onclick="stringTest('trim')">Trim</button>
+    <button onclick="stringTest('upper')">toUpperCase</button>
+    <button onclick="stringTest('lower')">toLowerCase</button>
+    <button onclick="stringTest('includes')">Includes 'js'</button>
+    <button onclick="stringTest('replace')">Replace 'js' → 'JavaScript'</button>
+    <div class="output" id="strOutput">Resultado aqui...</div>
+  </div>
+
+  <!-- NÚMEROS -->
+  <div class="card">
+    <h2>2. Números</h2>
+    <input type="text" id="numInput" placeholder='Ex: "42.78"' />
+    <button onclick="numberTest('Number')">Number()</button>
+    <button onclick="numberTest('parseInt')">parseInt()</button>
+    <button onclick="numberTest('parseFloat')">parseFloat()</button>
+    <button onclick="numberTest('round')">Math.round()</button>
+    <button onclick="numberTest('ceil')">Math.ceil()</button>
+    <button onclick="numberTest('floor')">Math.floor()</button>
+    <div class="output" id="numOutput">Resultado aqui...</div>
+  </div>
+
+  <!-- CONVERSÃO GERAL -->
+  <div class="card">
+    <h2>3. Conversão Geral</h2>
+    <input type="text" id="convInput" placeholder="Digite algo..." />
+    <button onclick="convertTest('String')">String()</button>
+    <button onclick="convertTest('Boolean')">Boolean()</button>
+    <button onclick="convertTest('isNaN')">isNaN()</button>
+    <div class="output" id="convOutput">Resultado aqui...</div>
+  </div>
+
+  <!-- JSON -->
+  <div class="card">
+    <h2>4. JSON</h2>
+    <input type="text" id="jsonInput" placeholder='Ex: {"nome": "Ana", "idade": 30}' />
+    <button onclick="jsonTest('parse')">JSON.parse()</button>
+    <button onclick="jsonTest('stringify')">JSON.stringify()</button>
+    <div class="output" id="jsonOutput">Resultado aqui...</div>
+  </div>
+
+  <script>
+    function stringTest(action) {
+      const input = document.getElementById("strInput").value;
+      let output = "";
+
+      switch (action) {
+        case "trim":
+          output = input.trim();
+          break;
+        case "upper":
+          output = input.toUpperCase();
+          break;
+        case "lower":
+          output = input.toLowerCase();
+          break;
+        case "includes":
+          output = input.includes("js");
+          break;
+        case "replace":
+          output = input.replace("js", "JavaScript");
+          break;
+      }
+
+      document.getElementById("strOutput").textContent = output;
+    }
+
+    function numberTest(action) {
+      const input = document.getElementById("numInput").value;
+      let num = Number(input);
+      let output = "";
+
+      switch (action) {
+        case "Number":
+          output = num;
+          break;
+        case "parseInt":
+          output = parseInt(input);
+          break;
+        case "parseFloat":
+          output = parseFloat(input);
+          break;
+        case "round":
+          output = Math.round(num);
+          break;
+        case "ceil":
+          output = Math.ceil(num);
+          break;
+        case "floor":
+          output = Math.floor(num);
+          break;
+      }
+
+      document.getElementById("numOutput").textContent = output;
+    }
+
+    function convertTest(action) {
+      const input = document.getElementById("convInput").value;
+      let output = "";
+
+      switch (action) {
+        case "String":
+          output = String(input);
+          break;
+        case "Boolean":
+          output = Boolean(input);
+          break;
+        case "isNaN":
+          output = isNaN(input);
+          break;
+      }
+
+      document.getElementById("convOutput").textContent = output;
+    }
+
+    function jsonTest(action) {
+      const input = document.getElementById("jsonInput").value;
+      let output = "";
+
+      try {
+        switch (action) {
+          case "parse":
+            output = JSON.parse(input);
+            output = JSON.stringify(output, null, 2); // formata bonito
+            break;
+          case "stringify":
+            output = JSON.stringify(eval("(" + input + ")")); // cuidado aqui
+            break;
+        }
+      } catch (e) {
+        output = "❌ Erro ao processar JSON: " + e.message;
+      }
+
+      document.getElementById("jsonOutput").textContent = output;
+    }
+  </script>
+
+</body>
+</html>
