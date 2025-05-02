@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 003</title>
+</head>
+<body>
+    <script>
+
+        var idade = Number(window.prompt('Qual sua idade? '))
+        var cnh =  (window.prompt('Você tem CNH? ')).toUpperCase(cnh)
+
+        if (idade >= 18) {
+            window.alert(`Você já pode dirigir, pois tem ${idade} anos.`)
+
+        }  if (idade < 18) {
+            window.alert(`Você não pode dirigir, pois ainda tem ${idade} anos.`)
+
+        } if ( cnh == 'SIM') {
+            window.alert('Você já possui CNH!')
+
+        } if ( cnh == 'NÃO' && idade >= 18) {
+            window.alert(`Você não tem CNH, mas tem idade para dirigir. Pois tem ${idade} anos`)
+
+        } if ( cnh == 'NÃO' && idade < 18) {
+            window.alert(`Você não tem CNH, nem idade para dirigir. Pois tem ${idade} anos`)
+        } 
+
+    </script>
+</body>
+</html>
