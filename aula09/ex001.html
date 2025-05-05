@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        body {
+            background-color: royalblue;
+            color: white;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-size: 1.2em;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Iniciando estudos DOM - Document Object Model</h1>
+    <p>Aqui vai o resultado</p>
+    <p>Aprendendo a usar o <strong>DOM</strong> em JavaScript.</p>
+    <div id="msg">Clique em mim!</div>
+    <script>
+
+        var corpo = window.document.body 
+        // corpo.style.backgroundColor = 'black'
+
+        var p1 = window.document.getElementsByTagName('p')[1];
+        // p1.style.color = 'yellow'
+
+        /* var d = window.document.getElementById('msg')
+        d.style.background = 'green';
+        d.innerText = 'Estou aguardando...' */
+        // window.document.getElementById('msg').innerText = 'Olá!';
+
+        var d = window.document.querySelector('div#msg');
+        d.style.color = 'slateblue';
+        d.style.backgroundColor = 'white';
+        d.style.width = 'fit-content';
+
+    </script>
+</body>
+</html>
