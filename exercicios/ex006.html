@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seleção de elementos no DOM</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>DOM Practice</title>
+</head>
+<body>
+    <h1 id="main-title">Título Principal</h1>
+    <p class="text">Parágrafo 1</p>
+    <p class="text highlight">Parágrafo 2</p>
+    <p class="text">Parágrafo 3</p>
+  
+    <ul id="item-list">
+      <li class="item">Item 1</li>
+      <li class="item highlight">Item 2</li>
+      <li class="item">Item 3</li>
+    </ul>
+    <button id="btn">Clique aqui</button>
+    <script>
+
+        const titulo = document.getElementById('main-title');
+        titulo.style.fontFamily = 'Arial';
+        titulo.style.color = 'orange';
+
+        console.log(titulo);
+
+        const paragrafos = document.querySelectorAll('.text');
+        console.log(paragrafos);
+
+        const destacado = document.querySelector('.text.highlight');
+        destacado.style.color = 'blue';
+        console.log(destacado);
+
+        const itens = document.querySelectorAll('#item-list li');
+        console.log(itens);
+
+        window.document.getElementById('btn').textContent = 'Clicado';
+
+        window.document.querySelector('#main-title').classList.add('novo-estilo');
+
+        window.document.querySelector('li.highligth').classList.remove('highligth');
+
+        document.querySelectorAll('.text')[1].textContent = 'Texto alterado';
+
+        const ultimo = document.querySelectorAll('#item-list .item');
+        console.log(ultimo[ultimo.length - 1]);
+
+        const quantos = document.querySelectorAll('.highlight').length;
+        console.log(quantos)
+        
+        
+
+    </script>
+</body>
+</html>
