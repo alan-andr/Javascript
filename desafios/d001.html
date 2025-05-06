@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafios das mensagens</title>
+</head>
+<body>
+    <h1>Desafio das Mensagens</h1>
+    <input type="button" value="Botão 1" id="btn1">
+    <input type="button" value="Botão 2" id="btn2">
+    <input type="button" value="Botão 3" id="btn3">
+    <script>
+
+        window.document.getElementById('btn1');
+        btn1.addEventListener('click', clicar);
+
+        function clicar() {
+            window.alert('Você clicou no 1º botão')
+        };
+
+        window.document.getElementById('btn2');
+        btn2.addEventListener('click', clicar2)
+        
+        function clicar2() {
+            window.alert('Você clicou no 2º botão')
+        };
+
+        window.document.getElementById('btn3');
+        btn3.addEventListener('click', clicar3)
+
+        function clicar3() {
+            window.alert('Você clicou no 3ª botão')
+        };
+
+    </script>
+</body>
+</html>
