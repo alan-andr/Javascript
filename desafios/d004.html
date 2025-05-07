@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculando o troco</title>
+    <style>
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        div {
+            display: flex;
+            flex-flow: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        button {
+            width: 300px;
+            height: 50px;
+            border-radius: 10px;
+            background-color: black;
+            color: white;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-weight: bold;
+            letter-spacing: 1px;
+            box-shadow: 3px 5px 5px rgba(0, 0, 0, 0.159);
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Calculando o troco</h1>
+        <button id="pdt">Comprar produto</button>
+    </div>
+    <script>
+
+        var produto = window.document.getElementById('pdt');
+        produto.addEventListener('click', clicar);
+
+        function clicar() {
+            var compra = window.prompt('Qual produto você está comprando?');
+            var custoCompra = Number(window.prompt(`Quanto custa ${compra} que você está comprando?`));
+            var pagar = Number(window.prompt(`Qual foi o valor que você deu para pagar ${compra}?`));
+            var troco = pagar - custoCompra;
+            window.alert(`Você comprou ${compra} que custou R$${custoCompra.toFixed(2)}.\nDeu R$${pagar.toFixed(2)} em dinheiro e vai receber R$${troco.toFixed(2)} de troco.\nVolte Sempre!`)
+        }
+    </script>
+</body>
+</html>
