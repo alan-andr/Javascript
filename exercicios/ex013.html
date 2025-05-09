@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperatura</title>
+</head>
+<body>
+    <h1>Temperatura</h1>
+    Qual a temperatura? <input type="number" name="temperatura" id="temperatura">°C
+    <input type="button" value="Verificar" id="verificar">
+    <p id="res"></p>
+    <script>
+
+        window.document.getElementById('verificar').addEventListener('click', verificar);
+
+        function verificar() {
+            var temp = Number(window.document.getElementById('temperatura').value);
+            var res = window.document.getElementById('res');
+
+
+            if ( temp >= 30) {
+                res.style.backgroundColor = 'red'
+                res.style.color = 'white'
+                res.innerText = 'Está calor!';
+            } else {
+                res.innerText = 'Está agradável!';
+            };
+        };
+
+    </script>
+</body>
+</html>
