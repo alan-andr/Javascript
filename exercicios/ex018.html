@@ -16,6 +16,12 @@
     Insira sua senha: <input type="password" name="senha" id="senha">
     <input type="button" value="Entrar" id="entrar">
     <p id="resSen">Aguardando acesso...</p>
+
+    <h1>Igual ou maior</h1>
+    <input type="number" name="numero1" id="numero1">
+    <input type="number" name="numero2" id="numero2">
+    <input type="button" value="Verificar" id="verificarNum">
+    <p id="resNum">Resultado...</p>
     <script>
 
         document.getElementById('verificar').addEventListener('click', function verificar() {
@@ -39,6 +45,18 @@
             } else {
                 resSenha.innerHTML = `Acesso negado!`;
                 resSenha.style.backgroundColor = 'red';
+            };
+        });
+
+        document.getElementById('verificarNum').addEventListener('click', function verificarNum() {
+            let num1 = Number(document.getElementById('numero1').value);
+            let num2 = Number(document.getElementById('numero2').value);
+            let resNum = document.getElementById('resNum');
+
+            if (num1 == num2 || num1 > num2) {
+                resNum.innerHTML = `O número ${num1} é maior ou igual a ${num2}.`
+            } else if (num2 == num1 || num2 > num1) {
+                resNum.innerHTML = `O número ${num2} é maior ou igual a ${num1}.`
             };
         });
 

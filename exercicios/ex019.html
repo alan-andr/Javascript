@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condições Aninhadas</title>
+</head>
+<body>
+    <h1>Inserindo nota</h1>
+    Insira sua nota (0 à 10): <input type="number" name="nota" id="nota">
+    <input type="button" value="Verificar" id="verificarNota">
+    <p id="resNota">Resultado...</p>
+
+    <h1>Nota de A a F</h1>
+    Insira uma nota: <input type="text" name="nota" id="notaf">
+    <input type="button" value="Verificar" id="verificaraf">
+    <p id="res">Resultado...</p>
+    <script>
+
+        window.document.getElementById('verificarNota').addEventListener('click', function verificarNota() {
+            let nota = Number(document.getElementById('nota').value);
+            let res = document.getElementById('resNota');
+
+            if (nota < 5) {
+                res.innerHTML = 'REPROVADO'
+            } else if ( nota >= 5 && nota <= 6.9) {
+                res.innerHTML = 'RECUPERAÇÃO'
+            } else {
+                res.innerHTML = 'APROVADO'
+            }
+            
+        })
+
+        window.document.getElementById('verificaraf').addEventListener('click', function verificar() {
+            let af = String(window.document.getElementById('notaf').value).toUpperCase();
+            let res = window.document.getElementById('res');
+
+            switch (af) {
+                case 'A':
+                    res.innerHTML = 'EXCELENTE';
+                    break;
+                case 'B':
+                    res.innerHTML = 'BOM'
+                    break;
+                case 'C':
+                    res.innerHTML = 'REGULAR'
+                    break;
+                case 'D':
+                case 'F':
+                    res.innerHTML = 'RUIM';
+                default:
+                    res.innerHTML = 'Nota inválida.'
+                    break;
+            }
+        });
+
+    </script>
+</body>
+</html>
