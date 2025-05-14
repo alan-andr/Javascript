@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condições compostas</title>
+</head>
+<body>
+    <h1>Par ou ímpar</h1>
+    Digite um número: <input type="number" name="numero" id="numero">
+    <input type="button" value="Verificar" id="verificar">
+    <p id="res">Resultado...</p>
+
+    <h1>Inserindo senha</h1>
+    <p><strong>Senha</strong>: admin123</p>
+    Insira sua senha: <input type="password" name="senha" id="senha">
+    <input type="button" value="Entrar" id="entrar">
+    <p id="resSen">Aguardando acesso...</p>
+    <script>
+
+        document.getElementById('verificar').addEventListener('click', function verificar() {
+            let num = Number(document.getElementById('numero').value);
+            let res = document.getElementById('res');
+
+            if (num % 2 == 0) {
+                res.innerHTML = `O número ${num} é PAR`;
+            } else {
+                res.innerHTML = `O número ${num} é ÍMPAR`
+            };
+        });
+
+        document.getElementById('entrar').addEventListener('click', function entrar() {
+            let senha = String(document.getElementById('senha').value);
+            let resSenha = document.getElementById('resSen');
+
+            if ( senha == 'admin123') {
+                resSenha.innerHTML = `Acesso permitido!`;
+                resSenha.style.backgroundColor = 'lightgreen';
+            } else {
+                resSenha.innerHTML = `Acesso negado!`;
+                resSenha.style.backgroundColor = 'red';
+            };
+        });
+
+    </script>
+</body>
+</html>
