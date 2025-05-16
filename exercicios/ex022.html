@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mês por Extenso</title>
+    <style>
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            background-color: rgb(151, 151, 218);
+        }
+
+        h1,p {
+            font-size: 1.5;
+        }
+
+        input[type=number] {
+            border-radius: 5px;
+            outline: none;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Mês por extenso</h1>
+    <p>Insira um número de 1 à 12 para saber o mês.</p>
+    <input type="number" name="num" id="num" min="1" max="12">
+    <input type="button" value="Verificar" id="btn">
+    <p id="res">O mês é...</p>
+    <script>
+
+        document.getElementById('btn').addEventListener('click', function verificarMes() {
+
+            var num = Number(document.getElementById('num').value);
+            var res = document.getElementById('res');
+            var diaMes;
+            
+            switch (num) {
+                case 1:
+                    diaMes = 'Janeiro'
+                    break;
+                case 2:
+                    diaMes = 'Fevereiro'
+                    break;
+                case 3:
+                    diaMes = 'Março'
+                    break;
+                case 4:
+                    diaMes = 'Abril'
+                    break;
+                case 5:
+                    diaMes = 'Maio'
+                    break;
+                case 6:
+                    diaMes = 'Junho'
+                    break;
+                case 7:
+                    diaMes = 'Julho'
+                    break;
+                case 8: 
+                    diaMes = 'Agosto'
+                    break;
+                case 9:
+                    diaMes = 'Setembro'
+                    break;
+                case 10:
+                    diaMes = 'Outubro'
+                    break;
+                case 11:
+                    diaMes = 'Novembro'
+                    break;
+                case 12:
+                    diaMes = 'Dezembro'
+                    break;
+                default:
+                    diaMes = 'Oooops, mês inválido!'
+                    break;
+
+            };
+
+            res.style.fontSize = '1.2em'
+            res.style.textDecoration = 'underline';
+            res.style.color = 'white';
+            res.innerHTML = `O mês é <strong>${diaMes}</strong>`;
+
+        });
+
+    </script>
+</body>
+</html>
