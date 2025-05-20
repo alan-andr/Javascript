@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contagem simples</title>
+</head>
+<body>
+    <h1>Contagem simples</h1>
+    <p id="res"></p>
+    <script>
+
+        let contador = 0;
+        let res = document.getElementById('res');
+
+        while ( contador <= 10 ) {
+            res.innerHTML = res.innerHTML + `O contador agora vale: ${contador}<br>`;
+            contador++;
+        }
+
+    </script>
+</body>
+</html>

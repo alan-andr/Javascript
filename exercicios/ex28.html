@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soma até zero(WHILE)</title>
+</head>
+<body>
+    <h1>Somando até zero</h1>
+    <p id="res">Resultado...</p>
+    <script>
+
+        var res = document.getElementById('res');
+        var num = Number(prompt("Digite um número para somar (0 para encerrar a soma!):"))
+        var soma = 0;
+
+        while ( num !== 0 ) {
+            soma += num;
+            num = Number(prompt('Digite outro número(0 para encerrar):'));
+        };
+
+        res.innerHTML = `A soma total foi <strong>${soma}</strong>`;
+
+    </script>
+</body>
+</html>

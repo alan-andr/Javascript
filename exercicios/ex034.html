@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Somando valores</title>
+</head>
+<body>
+    <h1>Somando valores até zero</h1>
+    <p id="res"></p>
+    <script>
+
+        let num = Number(prompt("Digite um número;"));
+        let res = document.getElementById('res');
+        let soma = 0;
+
+        res.innerHTML = '';
+
+        while ( num !== 0) {
+            soma += num
+            res.innerHTML += `O número digitado: ${num}<br>`
+            num = Number(prompt("Digite um número:"))
+        };
+        
+        res.innerHTML = `O total da soma = ${soma}`
+    </script>
+</body>
+</html>
