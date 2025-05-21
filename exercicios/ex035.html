@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contagem simples com passo</title>
+</head>
+<body>
+    <h1>Contagem simples</h1>
+    <p id="res"></p>
+    <script>
+
+        let numeroInicial = Number(prompt('Digite um número para iniciar:'));
+        let numeroFinal = Number(prompt('Digite o número final:'));
+        let passo = Number(prompt('Qual será o passo?'));
+        let resultado = document.querySelector('#res');
+        
+        resultado.innerHTML += `Número inicial: ${numeroInicial}<br>`;
+        resultado.innerHTML += `Número final: ${numeroFinal}<br>`;
+        resultado.innerHTML += `Passo: ${passo}<br>`;
+
+        while (numeroInicial <= numeroFinal) {
+            resultado.innerHTML += `Saída: ${numeroInicial}`
+            console.log(numeroInicial)
+            numeroInicial =+ passo
+        };
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contar ímpares</title>
+</head>
+<body>
+    <h1>Contar ímpares em um intervalo</h1>
+    <p id="res"></p>
+    <script>
+
+        let inicial = Number(prompt('Digite o número inicial:'))
+        let final = Number(prompt('Digite o número final:'))
+        let res = document.getElementById('res');
+        let intervalo = 0;
+
+        if (inicial % final == 1 ) {
+            while ( inicial <= final) {
+                res.innerHTML += `Ímpares: ${inicial}<br>`
+                inicial++
+            };
+
+        } else {
+            window.alert('Esse número é PAR!!!')
+        };
+
+    </script>
+</body>
+</html>
