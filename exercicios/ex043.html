@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contagem regressiva</title>
+</head>
+<body>
+    <h1>Contagem regressiva entre dois números</h1>
+    <input type="number" name="numero1" id="numero1" placeholder="Digite um número">
+    <input type="number" name="numero2" id="numero2" placeholder="Digite outro número">
+    <input type="button" value="Contar" id="contar">
+    <p id="res">Resultado...</p>
+    <script>
+
+        document.getElementById('contar').addEventListener('click', function contar() {
+            let valor1 = document.getElementById('numero1').value;
+            let valor2 = document.getElementById('numero2').value;
+            let resultado = document.getElementById('res');
+
+            let num1 = Number(valor1);
+            let num2 = Number(valor2);
+
+            resultado.innerHTML = '';
+            
+            if (num1 > num2) {
+                while (num1 >= num2) {
+                    resultado.innerHTML += `Contagem regressiva ${num1}<br>`
+                    num1--
+                }
+
+            } else if (num1 < num2) {
+                while (num1 <= num2) {
+                    resultado.innerHTML += `Contagem progressiva ${num1}<br>`
+                    num1++
+                }
+            }
+
+            
+        });
+
+    </script>
+</body>
+</html>

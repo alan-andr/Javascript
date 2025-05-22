@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuada</title>
+</head>
+<body>
+    <h1>Tabuada de Multiplicação</h1>
+    Digite um número <input type="number" name="numero" id="numero">
+    <input type="button" value="Mostrar" id="mostrar">
+    <p id="res">...</p>
+    <script>
+
+        document.getElementById('mostrar').addEventListener('click', function mostrar () {
+
+            let valor = (document.getElementById('numero').value);
+            let resultado = document.getElementById('res');
+            
+            let num = Number(valor);
+            let contador = 1;
+
+            resultado.innerHTML = '';
+            resultado.style.backgroundColor = 'black';
+            resultado.style.color = 'white';
+
+            if (num < 0 || isNaN(num)) {
+                resultado.innerHTML += `Por favor, insira um valor válido!`
+            } else {
+                while (contador <= 10) {
+                    let multiplicar = num * contador;
+                    resultado.innerHTML += `${num} x ${contador} = <strong>${multiplicar}</strong><br>`;
+                    contador++
+                };
+    
+                resultado.innerHTML += `Tabuada de multiplicação do número <strong>${num}</strong> realizada!`
+            }
+        });
+
+    </script>
+</body>
+</html>
