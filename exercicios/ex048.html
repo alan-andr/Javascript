@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuada Personalizada</title>
+</head>
+<body>
+    <h1>Tabuada Personalizada</h1>
+    <p id="res">Resultado...</p>
+    <script>
+
+        let valor = prompt('Digite um número para saber a tabuada:');
+        let res = document.getElementById('res');
+
+        let num = Number(valor)
+        let contador = 1;
+        let multiplicar = 0;
+
+        res.innerHTML = "";
+
+        if (num <= 0 || isNaN(num)) {
+            res.innerHTML += 'Por favor, insira um valor válido.';
+            res.style.backgroundColor = 'red';
+        } else {
+            while (contador <= 10) {
+                multiplicar = num * contador;
+                res.innerHTML += (`${num} x ${contador} = ${multiplicar}<br>`);
+                res.style.backgroundColor = 'lightblue';
+                contador++;
+            }
+        };
+
+    </script>
+</body>
+</html>
