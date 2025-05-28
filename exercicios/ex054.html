@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inserindo notas</title>
+</head>
+<body>
+    <script>
+        let nota = Number(prompt(`Digite a nota:`))
+        let somaNota = 0;
+        let mediaNota = 0;
+        let contador = 0;
+
+        while (nota > 0) {
+            somaNota += nota;
+            contador++
+            nota = Number(prompt(`Digite outra nota (ou -1 para parar)`));
+        }
+
+        alert(`Você inseriu notas ${contador} vezes`)
+
+        if (contador > 0) {
+            mediaNota = somaNota / contador;
+            alert(`A soma das notas é ${somaNota}`);
+            alert(`A média das notas é ${mediaNota}`);
+        } else {
+            alert(`Nenhuma nota válida inserida.`)
+        }
+
+    </script>
+</body>
+</html>
