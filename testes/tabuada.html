@@ -6,6 +6,26 @@
     <title>Tabuada</title>
 </head>
 <body>
-    <script src="script.js"></script>
+    <h1>Tabuada</h1>
+    <p>
+        <label for="nome">Nome:</label>
+        <input type="text" name="nome" id="nome" placeholder="Digite seu primeiro nome">
+        <input type="button" value="Enviar" id="enviarNome">
+    </p>
+    <p id="resNome">Por favor, aguarde...</p>
+    <script>
+        document.getElementById('enviarNome').addEventListener('click', function enviarNome() {
+            let nome = document.getElementById('nome').value;
+            let resNome = document.getElementById('resNome');
+
+            resNome.innerHTML = '';
+
+            if (nome.length === 0) {
+                resNome.innerHTML += `Ops, parece que você não preencheu o campo acima corretamente.`;
+            } else if (nome.length > 0) {
+                resNome.innerHTML += `Olá, ${nome}! Qual tabuada você deseja saber?`
+            }     
+        });
+    </script>
 </body>
 </html>
