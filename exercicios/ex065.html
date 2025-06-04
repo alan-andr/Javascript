@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condicional Composta</title>
+</head>
+<body>
+    <h1>Condicional Composta</h1>
+    <label for="nota">Nota:</label>
+    <input type="number" name="nota" id="nota" placeholder="Insira sua nota aqui">
+    <input type="button" value="Calcular" id="calc">
+    <p id="res" style="padding: 10px; width: fit-content;"></p>
+    <script>
+
+        document.getElementById('calc').addEventListener('click', function calcular() {
+            let valorNota = document.getElementById('nota').value;
+            let res = document.getElementById('res');
+
+            if (valorNota.length == 0) {
+                alert('Insira a nota no campo nota')
+                return
+            }
+
+            let nota = Number(valorNota);
+
+            if (nota >= 7) {
+                res.innerHTML = `Aprovado! nota ${nota}.`
+                res.style.backgroundColor = 'lightgreen'
+            } else {
+                res.innerHTML = `Reprovado! nota ${nota}.`
+                res.style.backgroundColor = 'red'
+            }
+
+        });
+
+    </script>
+</body>
+</html>
