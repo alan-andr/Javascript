@@ -1,5 +1,5 @@
 # Javascript
- Curso de Javascript do CursoemVideo do professor Gustavo Guanabara
+ Curso de Javascript pelo CursoemVideo do professor Gustavo Guanabara
 
  Aula 06
 
