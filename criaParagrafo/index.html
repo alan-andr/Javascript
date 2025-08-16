@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar parágrafo</title>
+    <style>
+
+        p.mensagem {
+            background-color: black;
+            color: white;
+            width: 300px;
+            height: 300px;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Criar Parágrafo</h1>
+    <p>Clique no botão abaixo para criar um parágrafo!</p>
+    <input type="button" value="Criar" id="criar">
+    <div id="container"></div>
+    <script>
+
+        document.getElementById('criar').addEventListener('click', () => {
+            let container = document.getElementById('container');
+            container.innerHTML = '';
+            
+            let p = document.createElement('p');
+            p.classList.add('mensagem');
+            p.textContent = 'Espero que tenha um ótimo dia!';
+            container.appendChild(p)
+        })
+
+    </script>
+</body>
+</html>

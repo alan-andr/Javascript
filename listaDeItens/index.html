@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Itens</title>
+    <style>
+
+        div#mensagem {
+            background-color: orangered;
+            color: white;
+
+            text-align: center;
+
+            border-radius: 1rem;
+            width: 300px;
+            margin: auto;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Lista de Itens</h1>
+    <p>Insira seus ítens no campo abaixo para adicionar à lista!</p>
+    <div>
+        <input type="text" name="item" id="item">
+        <input type="button" value="Adicionar" id="adicionar">
+    </div>
+    <div id="mensagem"></div>
+    <div>
+        <ul id="lista"></ul>
+    </div>
+    <input type="reset" value="Limpar Lista" id="limpar">
+    <script>
+
+        document.getElementById('adicionar').addEventListener('click', () => {
+            let divMensagem = document.getElementById('mensagem');
+            let mensagem = document.createElement('p');
+            mensagem.classList.add('mensagem');
+            mensagem.style.padding = '.825rem'
+            divMensagem.innerHTML = '';
+
+            let lista = document.getElementById('lista');
+            let item = document.getElementById('item');
+
+            if (item.value.trim() === '') {
+                mensagem.textContent = 'Por favor, preencha o campo acima!';
+                divMensagem.appendChild(mensagem);
+                return;
+            }
+
+            let itemLista = document.createElement('li');
+            itemLista.textContent = item.value;
+            lista.appendChild(itemLista);
+
+            document.getElementById('limpar').addEventListener('click', () => {
+                itemLista.remove();
+            })
+        })
+
+    </script>
+</body>
+</html>
