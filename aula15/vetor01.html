@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inserindo Números</title>
+</head>
+<body>
+    <h1>Inserindo números</h1>
+    <input type="number" name="num" id="number" placeholder="Digite um número">
+    <button id="add">Adicionar</button>
+    <section></section>
+    <script>
+
+        let numeros = [];
+
+        const addNumber = document.getElementById('add');
+        addNumber.addEventListener('click', () => {
+            let section = document.querySelector('section');
+            let message = document.createElement('p');
+            let valorNum = document.getElementById('number');
+
+            section.innerHTML = '';
+
+            if (valorNum.value.trim() === '') {
+                message.innerHTML = `Por favor preencha o campo acima!`;
+                section.append(message);
+                return;
+            }
+
+            let num = Number(valorNum.value);
+
+            if (num < 0) {
+                message.innerHTML = `Por favor, insira um número maior ou igual a zero!!!`;
+                section.append(message);
+                return;
+            }
+
+            numeros.push(num);
+
+            message.innerHTML = `Números digitados: ${numeros}`;
+            section.append(message);
+            console.log(numeros);
+
+            document.getElementById('number').value = '';
+        })
+
+    </script>
+</body>
+</html>
