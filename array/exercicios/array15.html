@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array uso de split</title>
+</head>
+<body>
+    <h1>Usando o Split</h1>
+    <input type="text" name="word" id="word">
+    <button type="button" id="add">Adicionar</button>
+    <section id="result"></section>
+    <script>
+        const addButton = document.getElementById('add');
+        let arrayWords = [];
+
+        addButton.addEventListener('click', () => {
+            let word = document.getElementById('word').value;
+            let sectionRes = document.getElementById('result');
+
+            if (word.trim() === '') {
+                sectionRes.innerHTML = `<p>Campo vazio!</p>`;
+                return;
+            }
+
+            arrayWords = word.split(' ');
+
+            sectionRes.innerHTML = `${JSON.stringify(arrayWords)}`;
+        })
+    </script>
+</body>
+</html>
