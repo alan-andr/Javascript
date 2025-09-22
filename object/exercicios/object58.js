@@ -6,17 +6,25 @@ const school = {
         { name: 'Rafael', grades: [6, 7, 5] }
     ],
 
+    getStudentsAverage(grades) {
+        return grades.reduce((total, value) => total + value, 0) / grades.length;
+    },
+
     calculateAverage() {
+        let studentsOverAverage = [];
+
         for (const { name, grades } of this.students) {
-            const averageGradeStudents = grades.reduce((total, value) => total + value, 0) / grades.length;
+            const average = this.getStudentsAverage(grades);
 
-            console.log(`Aluno(a): ${name}, média: ${averageGradeStudents}`);
+            console.log(`Aluno(a): ${name}, média: ${average.toFixed(1)}`);
 
-            if (averageGradeStudents > 7) {
-                console.log(`Aluno com média maior que 7: ${name}`);
+            if (average > 7) {
+                studentsOverAverage.push(name)
             }
         }
+
+        console.log(`Alunos com média maior que 7: ${studentsOverAverage.join(',')}`);
     }
-};
+}; 
 
 school.calculateAverage();
