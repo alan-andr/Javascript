@@ -1,26 +1,18 @@
-const coffee = {
-    name: 'Cappuccino Clássico',
-    size: 'Médio',
-    price: 12.50,
-    available: true
+const userMappings = {
+    'user_101': 'alex',
+    'user_102': 'bruna',
+    'user_103': 'carlos',
+    'user_104': 'diana'
 };
 
-const keys = Object.keys(coffee);
+function reverseUser(user) {
+    let newUser = {}
 
-console.log(`As chaves do objeto "Coffee": ${keys}`);
+    for (const key in user) {
+        newUser[user[key]] = key
+    }
 
-console.log('-------------------------------------------------');
-
-const values = Object.values(coffee);
-
-console.log(`Os valores das propriedades "Coffee": ${values}`)
-
-const arr = Object.entries(coffee);
-
-console.log('--------------------------------------------------');
-
-for (const element of arr) {
-    const [key, value] = element;
-
-    console.log(`The property ${key}, has the value ${value}.\n`);
+    return newUser;
 }
+
+console.log(reverseUser(userMappings));

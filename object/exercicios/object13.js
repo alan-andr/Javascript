@@ -1,19 +1,25 @@
-const coffee = {
-    name: 'Cappuccino Clássico',
-    size: 'Médio',
-    price: 12.50,
-    available: true
+const gameScores = {
+    teamName: 'Cyber Dragons',
+    players: [
+        { name: 'PlayerOne', kills: 12, assists: 8, deaths: 5 },
+        { name: 'PlayerTwo', kills: 8, assists: 15, deaths: 7 },
+        { name: 'PlayerThree', kills: 15, assists: 5, deaths: 3 }
+    ],
+    scoringRules: {
+        killPoint: 5,
+        assistPoint: 2,
+        deathPenalty: -3
+    }
 };
 
-coffee.roastLevel = 'Medium';
-coffee.isDecaf = false;
+function calculateTeamScore(game) {
+    const { killPoint, assistPoint , deathPenalty } = game.scoringRules;
+    
+    const totalPoints = game.players.reduce((total, score) => {
+        return total + ((score.kills * killPoint) + ( score.assists * assistPoint) + (score.deaths * deathPenalty));
+    }, 0);
 
-delete coffee.available;
+    return `Total points of 'Cyber Dragons' is ${totalPoints}`;
+}
 
-let coffeeDescription = '';
-
-for(const key in coffee) {
-    coffeeDescription += `${key}: ${coffee[key]} `
-};
-
-console.log(coffeeDescription);
+console.log(calculateTeamScore(gameScores));
