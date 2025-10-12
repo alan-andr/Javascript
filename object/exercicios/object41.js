@@ -33,17 +33,17 @@ const teamPerformance = {
 };
 
 function findTopScorer(team) {
-    let namePlayerWithMoreGoals = '';
+    let playerNameWithMoreGoals = '';
     let goals = 0;
 
     for (const key in team) {
         if (team[key].stats.goals > goals) {
-            namePlayerWithMoreGoals = key;
+            playerNameWithMoreGoals = key;
             goals = team[key].stats.goals
         }
     }
 
-    return namePlayerWithMoreGoals;
+    return playerNameWithMoreGoals;
 };
 
 function getPlayersByPosition(team, position) {
@@ -61,18 +61,12 @@ function getPlayersByPosition(team, position) {
 function calculateTotalStats(team) {
     const arrTeam = Object.values(team);
 
-    let goals = 0;
-    let assists = 0;
+    return arrTeam.reduce((acc, player) => {
+        acc.totalGoals += player.stats.goals;
+        acc.totalAssists += player.stats.assists;
 
-    return arrTeam.reduce((acc, score) => {
-        goals += score.stats.goals;
-        assists += score.stats.assists;
-
-        return {
-            totalGoals: goals,
-            totalAssists: assists
-        }
-    }, 0);
+        return acc; //! objeto com as propriedades totalGoals e totalAssists
+    }, { totalGoals: 0, totalAssists: 0});
 };
 
 const playerWithMoreGoals = findTopScorer(teamPerformance);
