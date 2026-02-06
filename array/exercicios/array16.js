@@ -1,9 +1,16 @@
-let fruits = ['banana', 'graviola', 'pera', 'maçã', 'jabuticabra'];
+const employees = [
+    {name: 'Alice', salary: 5000, dept: 'IT'},
+    {name: 'Bob', salary: 4000, dept: 'Marketing'},
+    {name: 'Charlie', salary: 6000, dept: 'IT'}
+];
 
-console.log(`A primeira fruta da lista é: ${fruits[0]}`);
-console.log(`A última fruta da lista é: ${fruits[fruits.length - 1]}`);
+for (const i in employees) {
+    employees[i].salary += (employees[i].salary * 0.10);
 
-fruits.unshift('cajú');
-fruits.push('melancia');
+    if (employees[i].dept === 'IT') {
+        employees[i].salary += 500;
+    }
 
-console.log('Nova lista de frutas: ' + fruits);
+};
+
+console.log(employees);

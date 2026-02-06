@@ -1,15 +1,17 @@
-let numbers = [10, 20, 30, 40, 50];
-let sumOfNumbers = 0;
-let averageOfValues = 0;
+const userRegister = {
+  userName: "dev_explorer",
+  email: "",
+  password: "123",
+  country: "Brazil",
+};
 
-console.log(numbers);
+let keys = Object.keys(userRegister);
+let values = Object.values(userRegister);
 
-for (const i of numbers) {
-    sumOfNumbers += i;
+for (let i = 0; i < keys.length; i++) {
+  if (values[i] === "") {
+    console.log(`\nError: Field ${keys[i]} is empty`);
+  } else {
+    console.log(`\nField: ${keys[i]}, Value: ${values[i]}`);
+  }
 }
-
-averageOfValues = sumOfNumbers / numbers.length;
-
-console.log(`A soma dos valores é: ${sumOfNumbers}`);
-
-console.log(`A média dos valores é: ${averageOfValues}`);
